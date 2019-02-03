@@ -65,7 +65,7 @@ public class Tiscon4DomainBean {
     private String mobilePhoneNumber;
 
     /** メールアドレス */
-    @SystemChar(charsetDef = "半角英数", message = "{domain.illegalCharacter}")
+    @MailAddress()
     @Length(max = 255)
     private String emailAddress;
 
