@@ -72,7 +72,7 @@
                 <component-ref name="半角数字"/>
             </list>
         </property>
-    </component>
+    </component>charsetDef
 
     <!-- ASCII文字 -->
     <component name="ASCII文字" class="nablarch.core.validation.validator.unicode.CompositeCharsetDef">

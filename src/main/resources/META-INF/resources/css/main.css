@@ -48,6 +48,10 @@ ul.label {
     text-align: left;
 }
 
+.mail{
+    display: flex;
+    flex-direction: row;}
+
 .number {
     text-align: right;
     vertical-align: middle !important;
