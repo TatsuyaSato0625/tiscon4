@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>ご本人情報の入力</title>
-    <script th:src="@{/jquery/jquery.autoKana.js}"></script>
     <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"/>
     <link rel="stylesheet"
           th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 　　<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script th:src="@{/jquery/jquery.autoKana.js}"language="javascript" type="text/javascript"></script>
 
 </head>
 <body>
@@ -47,7 +47,7 @@
                                 <td>
                                     <p>例：ＴＩＳ　太郎</p>
                                     <div class="field" th:classappend="${errors.hasError('kanjiName')} ? 'error'">
-                                        <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                        <input type="text" name="kanjiName" th:value="${form.kanjiName}" id="user_name"/>
                                         <p th:if="${errors.hasError('kanjiName')}"
                                            th:text="${errors.getMessage('kanjiName')}" class="error-message">
                                         </p>
@@ -62,14 +62,21 @@
                                 <td>
                                     <p>例：ティーアイエス　タロウ</p>
                                     <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
-                                        <input type="text" name="kanaName" th:value="${form.kanaName}"/>
+                                        <input type="text" name="kanaName" th:value="${form.kanaName}" id="user_name_kana"/>
                                         <p th:if="${errors.hasError('kanaName')}"
                                            th:text="${errors.getMessage('kanaName')}" class="error-message">
                                         </p>
                                     </div>
                                 </td>
                             </tr>
-
+                            <script type="text/javascript">
+                                $(document).ready(
+                                    function() {
+                                        $.fn.autoKana('#user_name', '#user_name_kana', {
+                                            katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+                                        });
+                                    });
+                            </script>
                             <tr>
                                 <td>
                                     <label>お名前（ローマ字）</label>
@@ -188,8 +195,17 @@
                                 </td>
                                 <td>
                                     <p>例：tiscon@example.com</p>
-                                    <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
-                                        <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
+                                    <div class="mail" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
+                                        <input type="text" name="emailAddress" style="width:200px;" th:value="${form.emailAddress}"/>
+                                        <p>@</p>
+                                        <select name="domain" style="width:200px;">
+                                            <option value="docomo.ne.jp">docomo.ne.jp</option>
+                                            <option value="ezweb.ne.jp">ezweb.ne.jp</option>
+                                            <option value="i.softbank.ne.jp">i.softbank.ne.jp</option>
+                                            <option value="softbank.ne.jp">softbank.ne.jp</option>
+                                            <option value="gmail.com">gmail.com</option>
+                                            <option value="yahoo.co.jp">yahoo.co.jp</option>
+                                        </select>
                                         <p th:if="${errors.hasError('emailAddress')}"
                                            th:text="${errors.getMessage('emailAddress')}" class="error-message">
                                         </p>
