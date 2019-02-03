@@ -195,8 +195,17 @@
                                 </td>
                                 <td>
                                     <p>例：tiscon@example.com</p>
-                                    <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
-                                        <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
+                                    <div class="mail" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
+                                        <input type="text" name="emailAddress" style="width:200px;" th:value="${form.emailAddress}"/>
+                                        <p>@</p>
+                                        <select name="domain" style="width:200px;">
+                                            <option value="docomo.ne.jp">docomo.ne.jp</option>
+                                            <option value="ezweb.ne.jp">ezweb.ne.jp</option>
+                                            <option value="i.softbank.ne.jp">i.softbank.ne.jp</option>
+                                            <option value="softbank.ne.jp">softbank.ne.jp</option>
+                                            <option value="gmail.com">gmail.com</option>
+                                            <option value="yahoo.co.jp">yahoo.co.jp</option>
+                                        </select>
                                         <p th:if="${errors.hasError('emailAddress')}"
                                            th:text="${errors.getMessage('emailAddress')}" class="error-message">
                                         </p>
