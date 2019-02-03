@@ -2,20 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>ご本人情報の入力</title>
-
+    <script th:src="@{/jquery/jquery.autoKana.js}"></script>
     <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"/>
     <link rel="stylesheet"
           th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 　　<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script th:src="/jquery/jquery.autoKana.js"></script>
 
 </head>
 <body>
 
 <nav th:insert="header.html :: header"></nav>
-
 <div class="full height image">
     <div class="ui main container">
         <div class="ui information container">
@@ -71,6 +69,7 @@
                                     </div>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td>
                                     <label>お名前（ローマ字）</label>
