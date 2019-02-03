@@ -159,6 +159,9 @@ ul.label {
     color: #FFF;
 }
 
+.index-button:hover{
+    color: yellow;}
+
 .acceptance-icon {
     padding:0.5em 1em;
     margin:0 auto;
@@ -182,3 +185,7 @@ td {
     width: 400px;
 }
 
+.header{
+    background-color: #00008b;
+    color: white;
+    }
