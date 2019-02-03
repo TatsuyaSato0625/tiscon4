@@ -7,7 +7,7 @@ body {
 }
 
 .ui.main.container {
-    padding-top: 80px;
+    padding-top: 120px;
 }
 
 a.logo {
@@ -186,13 +186,8 @@ td {
 }
 
 .footer{
-    margin-left: 50px;
-    margin-right: 50px;
-    background-color: #98fb98;
-    }
-
-.header{
-    background-color: #00008b;
-    color: white;
-    }
+    background-color: white;
+    padding: 30px 200px;
+    box-shadow: 2px 2px 9px gray;
+  }
 
