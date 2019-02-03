@@ -4,7 +4,7 @@ import nablarch.core.validation.ee.Required;
 
 import java.io.Serializable;
 
-public class aAcceptForm implements Serializable {
+public class AcceptForm implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /** 加入条件の同意確認 */
